@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolate.WebFace", "Chocolate.WebFace\Chocolate.WebFace.csproj", "{B79CBDD5-50C2-4BBE-8CAA-FEF2564DCA98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolate.Api", "Chocolate.Api\Chocolate.Api.csproj", "{1D1BD683-E9C6-4041-B8AC-FEEA2F413F26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{2C9573BD-59F6-4628-B192-A812B05B1ECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolate.Domain.Core", "Chocolate.Domain.Core\Chocolate.Domain.Core.csproj", "{DC0D2FF3-DB73-4B35-8A08-477E8BA41F5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolate.Domain.Dal", "Chocolate.Domain.Dal\Chocolate.Domain.Dal.csproj", "{8F4C50EC-9C4A-449B-8ED3-2FE94EFC090C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chocolate.Domain.Services", "Chocolate.Domain.Services\Chocolate.Domain.Services.csproj", "{81B0D117-C18F-4A61-A278-543003B075BB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chocolate.Idp", "Chocolate.Idp\Chocolate.Idp.csproj", "{1D14850D-D886-4CA4-8886-6827CE74A931}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B79CBDD5-50C2-4BBE-8CAA-FEF2564DCA98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79CBDD5-50C2-4BBE-8CAA-FEF2564DCA98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79CBDD5-50C2-4BBE-8CAA-FEF2564DCA98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79CBDD5-50C2-4BBE-8CAA-FEF2564DCA98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D1BD683-E9C6-4041-B8AC-FEEA2F413F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D1BD683-E9C6-4041-B8AC-FEEA2F413F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D1BD683-E9C6-4041-B8AC-FEEA2F413F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D1BD683-E9C6-4041-B8AC-FEEA2F413F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC0D2FF3-DB73-4B35-8A08-477E8BA41F5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC0D2FF3-DB73-4B35-8A08-477E8BA41F5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC0D2FF3-DB73-4B35-8A08-477E8BA41F5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC0D2FF3-DB73-4B35-8A08-477E8BA41F5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F4C50EC-9C4A-449B-8ED3-2FE94EFC090C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F4C50EC-9C4A-449B-8ED3-2FE94EFC090C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F4C50EC-9C4A-449B-8ED3-2FE94EFC090C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F4C50EC-9C4A-449B-8ED3-2FE94EFC090C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B0D117-C18F-4A61-A278-543003B075BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B0D117-C18F-4A61-A278-543003B075BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B0D117-C18F-4A61-A278-543003B075BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B0D117-C18F-4A61-A278-543003B075BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D14850D-D886-4CA4-8886-6827CE74A931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D14850D-D886-4CA4-8886-6827CE74A931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D14850D-D886-4CA4-8886-6827CE74A931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D14850D-D886-4CA4-8886-6827CE74A931}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DC0D2FF3-DB73-4B35-8A08-477E8BA41F5C} = {2C9573BD-59F6-4628-B192-A812B05B1ECC}
+		{8F4C50EC-9C4A-449B-8ED3-2FE94EFC090C} = {2C9573BD-59F6-4628-B192-A812B05B1ECC}
+		{81B0D117-C18F-4A61-A278-543003B075BB} = {2C9573BD-59F6-4628-B192-A812B05B1ECC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B42E6895-DD75-4AEE-AA81-A262CC613CC0}
+	EndGlobalSection
+EndGlobal

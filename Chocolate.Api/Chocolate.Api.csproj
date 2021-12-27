@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Chocolate.Domain.Core\Chocolate.Domain.Core.csproj" />
+    <ProjectReference Include="..\Chocolate.Domain.Dal\Chocolate.Domain.Dal.csproj" />
+    <ProjectReference Include="..\Chocolate.Domain.Services\Chocolate.Domain.Services.csproj" />
+  </ItemGroup>
+
+
+</Project>

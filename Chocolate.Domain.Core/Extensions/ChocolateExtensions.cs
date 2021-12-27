@@ -11,6 +11,7 @@ namespace Chocolate.Domain.Core.Extensions
         public static ChocolateDto ToChocolateDto(this ChocolateEntity chocolateEntity)
             => new ChocolateDto
             {
+                Id = chocolateEntity.Id,
                 Calories = chocolateEntity.Calories,
                 CocoaVolume = chocolateEntity.CocoaVolume,
                 CountryOrigin = chocolateEntity.CountryOrigin,

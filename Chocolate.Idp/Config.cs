@@ -4,6 +4,7 @@
 
 using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
+using IdentityModel;
 using System.Collections.Generic;
 
 namespace Chocolate.Idp
@@ -14,7 +15,9 @@ namespace Chocolate.Idp
             new IdentityResource[]
             { 
                 new IdentityResources.OpenId(),
-                new IdentityResources.Profile()
+                new IdentityResources.Profile(),
+                new IdentityResources.Address(),
+                new IdentityResource(JwtClaimTypes.Role, "Your role(s)", new List<string>() { "role" })
             };
 
         public static IEnumerable<ApiScope> ApiScopes =>
@@ -37,7 +40,9 @@ namespace Chocolate.Idp
                     AllowedScopes = new List<string>
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile
+                        IdentityServerConstants.StandardScopes.Profile,
+                        IdentityServerConstants.StandardScopes.Address,
+                        JwtClaimTypes.Role
                     },
                     ClientSecrets = new []
                     {

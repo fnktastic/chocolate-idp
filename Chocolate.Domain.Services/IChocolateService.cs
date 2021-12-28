@@ -2,6 +2,7 @@
 using Chocolate.Domain.Core.Dtos;
 using Chocolate.Domain.Core.Entities;
 using Chocolate.Domain.Core.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,13 @@ namespace Chocolate.Domain.Services
         }
 
         public Task<IEnumerable<ChocolateDto>> GetAllAsync()
+            => Task.FromResult(_chocolateRepository
+                .Query<ChocolateEntity>()
+                .ToList()
+                .Select(e => e.ToChocolateDto())
+                .AsEnumerable());
+
+        public Task<IEnumerable<ChocolateDto>> GetAllByOwnerIdAsync(Guid ownerId)
             => Task.FromResult(_chocolateRepository
                 .Query<ChocolateEntity>()
                 .ToList()

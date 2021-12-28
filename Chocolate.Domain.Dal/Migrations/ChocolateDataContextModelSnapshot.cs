@@ -41,6 +41,9 @@ namespace Chocolate.Domain.Dal.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("OwnerId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<float>("SugarVolume")
                         .HasColumnType("real");
 

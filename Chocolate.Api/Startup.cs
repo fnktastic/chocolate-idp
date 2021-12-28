@@ -2,6 +2,7 @@ using Chocolate.Domain.Core.Abstracts;
 using Chocolate.Domain.Dal.Contexts;
 using Chocolate.Domain.Dal.Repositories;
 using Chocolate.Domain.Services;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -33,6 +35,13 @@ namespace Chocolate.Api
             services.AddTransient<IChocolateRepository, ChocolateRepository>();
             services.AddTransient<IChocolateService, ChocolateService>();
             services.AddControllers();
+            services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
+                .AddIdentityServerAuthentication(options =>
+                {
+                    options.Authority = "https://localhost:44330";
+                    options.ApiName = "chocolateapi";
+                    options.ApiSecret = "oleksecret";
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -29,7 +29,7 @@ namespace IdentityServerHost.Quickstart.UI
                 {
                     new TestUser
                     {
-                        SubjectId = "818727",
+                        SubjectId = "4771c9a1-6f8e-4104-ba89-105c43b511c1",
                         Username = "alice",
                         Password = "alice",
                         Claims =
@@ -41,12 +41,12 @@ namespace IdentityServerHost.Quickstart.UI
                             new Claim(JwtClaimTypes.EmailVerified, "true", ClaimValueTypes.Boolean),
                             new Claim(JwtClaimTypes.WebSite, "http://alice.com"),
                             new Claim(JwtClaimTypes.Address, JsonSerializer.Serialize(address), IdentityServerConstants.ClaimValueTypes.Json),
-                            new Claim(JwtClaimTypes.Role, "Admin, Super Admin")
+                            new Claim(JwtClaimTypes.Role, "Admin")
                         }
                     },
                     new TestUser
                     {
-                        SubjectId = "88421113",
+                        SubjectId = "668f285c-e817-4262-9503-d9e96c776496",
                         Username = "bob",
                         Password = "bob",
                         Claims =

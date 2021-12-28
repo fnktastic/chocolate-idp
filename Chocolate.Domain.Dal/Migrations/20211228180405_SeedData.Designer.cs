@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chocolate.Domain.Dal.Migrations
 {
     [DbContext(typeof(ChocolateDataContext))]
-    [Migration("20211227133807_Init")]
-    partial class Init
+    [Migration("20211228180405_SeedData")]
+    partial class SeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,6 +42,9 @@ namespace Chocolate.Domain.Dal.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("OwnerId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<float>("SugarVolume")
                         .HasColumnType("real");

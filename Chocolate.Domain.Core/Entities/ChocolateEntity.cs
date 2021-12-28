@@ -13,5 +13,7 @@ namespace Chocolate.Domain.Core.Entities
         public float SugarVolume { get; set; }
         public float CocoaVolume { get; set; }
         public float Calories { get; set; }
+
+        public Guid OwnerId { get; set; }
     }
 }

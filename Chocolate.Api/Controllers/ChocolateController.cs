@@ -1,5 +1,6 @@
 ﻿using Chocolate.Domain.Core.Abstracts;
 using Chocolate.Domain.Core.Dtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace Chocolate.Api.Controllers
             _chocolateService = chocolateService;
         }
 
+        [Authorize( Roles = "Admin" )]
         public Task<IEnumerable<ChocolateDto>> GetAll()
         {
             return _chocolateService.GetAllAsync();

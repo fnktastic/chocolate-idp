@@ -22,7 +22,8 @@ namespace Chocolate.Domain.Dal.Migrations
                     CountryOrigin = table.Column<string>(nullable: true),
                     SugarVolume = table.Column<float>(nullable: false),
                     CocoaVolume = table.Column<float>(nullable: false),
-                    Calories = table.Column<float>(nullable: false)
+                    Calories = table.Column<float>(nullable: false),
+                    OwnerId = table.Column<Guid>(nullable: false)
                 },
                 constraints: table =>
                 {

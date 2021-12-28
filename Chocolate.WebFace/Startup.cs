@@ -29,7 +29,9 @@ namespace Chocolate.WebFace
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
+
             services.AddHttpContextAccessor();
             services.AddTransient<JwtTokenHandler>();
             services.AddTransient<IChocolateApiService, ChocolateApiService>();

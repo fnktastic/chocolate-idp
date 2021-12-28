@@ -32,12 +32,12 @@ namespace Chocolate.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            IdentityModelEventSource.ShowPII = true;
+            services.AddControllers()
+                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
 
             services.AddScoped(provider => new ChocolateDataContext(Configuration.GetConnectionString("ChocolateConnectionString")));
             services.AddTransient<IChocolateRepository, ChocolateRepository>();
             services.AddTransient<IChocolateService, ChocolateService>();
-            services.AddControllers();
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {

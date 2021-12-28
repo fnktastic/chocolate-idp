@@ -4,7 +4,7 @@ using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace Chocolate.WebFace.Extensions
+namespace Chocolate.WebFace.Middlewares
 {
     public class TokenDebuggerMiddleware
     {
@@ -20,7 +20,11 @@ namespace Chocolate.WebFace.Extensions
             var identityToken = await httpContextAccessor.HttpContext
                 .GetTokenAsync(OpenIdConnectParameterNames.IdToken);
 
+            var accessToken = await httpContextAccessor.HttpContext
+                .GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
+
             Debug.WriteLine($"Token: {identityToken}");
+            Debug.WriteLine($"Access token: {accessToken}");
 
             await _next(context);
         }

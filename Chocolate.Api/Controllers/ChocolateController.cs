@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Chocolate.Api.Controllers
 {
-
+    [ApiController]
+    [Authorize]
     public class ChocolateController : Controller
     {
         private readonly IChocolateService _chocolateService;
@@ -17,6 +18,7 @@ namespace Chocolate.Api.Controllers
             _chocolateService = chocolateService;
         }
 
+        [HttpGet("api/chocolate/getall")]
         [Authorize( Roles = "Admin" )]
         public Task<IEnumerable<ChocolateDto>> GetAll()
         {

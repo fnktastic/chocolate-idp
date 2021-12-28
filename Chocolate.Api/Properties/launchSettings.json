@@ -15,7 +15,8 @@
       "launchUrl": "api/home/index",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "applicationUrl": "https://localhost:44330/"
     },
     "Chocolate.Api": {
       "commandName": "Project",

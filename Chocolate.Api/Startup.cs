@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Logging;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -31,6 +32,8 @@ namespace Chocolate.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            IdentityModelEventSource.ShowPII = true;
+
             services.AddScoped(provider => new ChocolateDataContext(Configuration.GetConnectionString("ChocolateConnectionString")));
             services.AddTransient<IChocolateRepository, ChocolateRepository>();
             services.AddTransient<IChocolateService, ChocolateService>();
@@ -38,7 +41,7 @@ namespace Chocolate.Api
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
-                    options.Authority = "https://localhost:44330";
+                    options.Authority = "https://localhost:5001/";
                     options.ApiName = "chocolateapi";
                     options.ApiSecret = "oleksecret";
                 });
@@ -55,6 +58,8 @@ namespace Chocolate.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
